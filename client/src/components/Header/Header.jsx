@@ -8,7 +8,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 const Header = () => {
     
   return (
-   <header className='w-full sticky top-0 left-0 z-10 bg-white border-b border-gray-300'>
+   <header className='w-full static top-0 left-0 z-10 bg-white border-b border-gray-300'>
         <nav className='max-w-screen-2xl mx-auto py-2 flex items-center justify-between'>
 
             <Link className='flex justify-start items-center gap-1 text-gray-600'>

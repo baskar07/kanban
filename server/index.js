@@ -8,6 +8,8 @@ const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 require('./config/passport');
+const error = require('./middleware/error');
+
 const app = express();
 
 //config
@@ -54,10 +56,14 @@ connectDB();
 
 // Routes call
 const googleAuth = require('./routes/googleAuth');
-const { setEngine } = require('crypto');
-app.use('/api',googleAuth)
+const boards = require('./routes/boardRoutes');
+const user = require('./routes/userRoutes');
+app.use('/api',googleAuth);
+app.use('/api',user);
+app.use('/api',boards);
 
+app.use(error);
 
 app.listen(PORT,()=>{
-    console.log(`Server running port: ${PORT}`);
+    console.log(`Server running port: ${PORT} on ${process.env.NODE_ENV}`);
 })

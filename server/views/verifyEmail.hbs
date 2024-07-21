@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{subject}}</title>
+     <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff !important;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, {{email}}</h1>
+        <p>To finish setting up your account and start using Trello, confirm we’ve got the correct email for you.</p>
+        <a href={{verificationUrl}} class="button">Verify Email</a>
+        <p>If you did not create an account, no further action is required.</p>
+        <p>Thanks,<br>The Team</p>
+    </div>
+</body>
+</html>

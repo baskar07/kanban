@@ -6,22 +6,32 @@ import Boards from './pages/Boards/Boards';
 import Home from './pages/Home/Home';
 import Settings from './pages/Settings/Settings';
 import Login from './pages/User/Login';
+import Signup from './pages/User/Signup';
+import VerifyEmail from './pages/User/VerifyEmail';
+import AuthLayout from './components/Layout/AuthLayout';
+import AppLayout from './components/Layout/AppLayout';
 
 const App = () => {
   return (
-    <React.Fragment>
-      <Header />
-      <Routes>
-          
-      <Route path='/login' element={<Login />} />
-        <Route path='/' element={<Main/>}>
-          <Route index element={<Home />}/>
-          <Route path='/boards' element={<Boards />}   />
-          <Route path='/settings' element={<Settings />}   />
-        </Route>
+    <Routes>
+      <Route path='/' element={<AuthLayout/>}>
+        <Route path='signup' element={<Signup />} />
+        <Route path='verify' element={<VerifyEmail />} />
+      </Route>
+      <Route path='/' element={<AppLayout />}>
+
+      </Route>
+
       
-      </Routes>
-    </React.Fragment>
+      
+
+      
+      <Route path='/home' element={<Home />}/>
+
+  
+      
+    </Routes>
+    
   )
 }
 
